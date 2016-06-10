@@ -24,7 +24,7 @@ class Listener (object):
 
         self.client_addrs_history.append (addr [0])
 
-        print INFO + 'Client connected. IP: {0}'.format(addr [0])
+        print INFO + 'Client sent request. IP: {0}'.format(addr [0])
 
         connection.send ('')
         connection.close ()
