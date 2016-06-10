@@ -21,7 +21,9 @@ class Payload (object):
         def detect_browser (data):
 
             if 'User-Agent' in data:
-                if 'Chrome' in data:
+                if 'Opera' in data:
+                    results ['Browser'] = 'Opera'
+                elif 'Chrome' in data:
                     results ['Browser'] = 'Chrome'
                 elif 'Firefox' in data:
                     results ['Browser'] = 'Firefox'
@@ -29,8 +31,6 @@ class Payload (object):
                     results ['Browser'] = 'Safari'
                 elif 'Explorer' in data:
                     results ['Browser'] = 'Internet Explorer'
-                elif 'Opera' in data:
-                    results ['Browser'] = 'Opera'
 
 
 
