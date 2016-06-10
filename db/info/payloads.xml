@@ -1,0 +1,8 @@
+<payloads>
+    <payload>
+        <name>Get Info</name>
+        <version>0.1</version>
+        <author>DOCTOR_RABB</author>
+        <path>info.getinfo</path>
+    </payload>
+</payloads>
