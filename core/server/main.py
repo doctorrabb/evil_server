@@ -20,7 +20,6 @@ class Listener (object):
         from core.design.colors import INFO
 
         connection, addr = self.sock.accept ()
-        self.connection = connection
         data = connection.recv (RECV_BYTES)
 
         self.client_addrs_history.append (addr [0])
