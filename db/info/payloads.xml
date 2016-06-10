@@ -2,7 +2,26 @@
     <payload>
         <name>Get Info</name>
         <version>0.1</version>
+
+        <description>
+            Gets info about victim's OS and browser.
+        </description>
+
         <author>DOCTOR_RABB</author>
         <path>info.getinfo</path>
+        <short>getinfo</short>
+    </payload>
+
+    <payload>
+        <name>Infinity Alert</name>
+        <version>0.1</version>
+
+        <description>
+            Shows "infinity" text.
+        </description>
+
+        <author>DOCTOR_RABB</author>
+        <path>notbad.alert.alert</path>
+        <short>alert</short>
     </payload>
 </payloads>

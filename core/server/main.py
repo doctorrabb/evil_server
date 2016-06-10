@@ -20,19 +20,32 @@ class Listener (object):
         from core.design.colors import INFO
 
         connection, addr = self.sock.accept ()
+        self.connection = connection
         data = connection.recv (RECV_BYTES)
 
         self.client_addrs_history.append (addr [0])
 
         print INFO + 'Client connected. IP: {0}'.format(addr [0])
 
-        connection.send ('lol')
+        connection.send ('')
         connection.close ()
 
         if data:
             return data
 
         return '\n'
+
+    def send_data (self, text):
+
+        from core.design.colors import INFO
+
+        connection, addr = self.sock.accept()
+        self.client_addrs_history.append(addr[0])
+
+        print INFO + 'Client connected. IP: {0}'.format(addr[0])
+
+        connection.send (text)
+        connection.close ()
 
     def connection_execute(self, payload):
         from importlib import import_module
