@@ -48,11 +48,26 @@ class Listener (object):
 
     def connection_execute(self, payload):
         from importlib import import_module
+        from core.db.payloads_db import PayloadDB
+        from core.const import PAYLOAD_DB_PATH
 
-        module = import_module ('payloads.{0}'.format (payload))
-        payload_exec = getattr (module, 'Payload') (self)
+        db = PayloadDB (PAYLOAD_DB_PATH)
+        FULL_NAME = str ()
+        IS_OK = False
 
-        payload_exec.run ()
+        for i in db.get_payloads ():
+            if i ['short'] == payload:
+                IS_OK = True
+                FULL_NAME = i ['path']
+                break
+
+        if IS_OK:
+            payload_exec = getattr (import_module ('payloads.{0}'.format (FULL_NAME)), 'Payload') (self)
+            payload_exec.run ()
+        else:
+            from core.design.colors import ERR
+            print ERR + 'No such payload: {0}'.format (payload)
+            sys.exit (-1)
 
     def start_listen (self):
 

@@ -22,6 +22,32 @@
 
         <author>DOCTOR_RABB</author>
         <path>notbad.alert.alert</path>
-        <short>alert</short>
+        <short>infinity_alert</short>
+    </payload>
+
+    <payload>
+        <name>Crash Browser</name>
+        <version>0.1</version>
+
+        <description>
+            Crash user's browser.
+        </description>
+
+        <author>DOCTOR_RABB</author>
+        <path>notbad.crash</path>
+        <short>crash</short>
+    </payload>
+
+    <payload>
+        <name>Fuck History</name>
+        <version>0.1</version>
+
+        <description>
+            Spoil user's history in browser.
+        </description>
+
+        <author>DOCTOR_RABB</author>
+        <path>notbad.fuck_history</path>
+        <short>fuck_history</short>
     </payload>
 </payloads>
